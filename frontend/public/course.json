@@ -65,17 +65,25 @@
     },
     {
         "id":9,
-        "name":"Comic Book",
+        "name":"Fiction Book",
         "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "price":0,
-        "category":"Free",
+        "price":100,
+        "category":"Food",
         "image":"https://img.freepik.com/free-photo/education-day-scene-fantasy-style-aesthetic_23-2151040272.jpg?t=st=1725974085~exp=1725977685~hmac=68384a1740c6083c197199047c9ed4133e75176588bd8896f4aa62be7b766053&w=740"
     },
     {
         "id":10,
-        "name":"Recipe Book",
+        "name":"Romance Book",
         "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "price":100,
+        "price":250,
+        "category":"Food",
+        "image":"https://img.freepik.com/free-photo/education-day-scene-fantasy-style-aesthetic_23-2151040272.jpg?t=st=1725974085~exp=1725977685~hmac=68384a1740c6083c197199047c9ed4133e75176588bd8896f4aa62be7b766053&w=740"
+    },
+    {
+        "id":11,
+        "name":"Action Book",
+        "title":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":600,
         "category":"Food",
         "image":"https://img.freepik.com/free-photo/education-day-scene-fantasy-style-aesthetic_23-2151040272.jpg?t=st=1725974085~exp=1725977685~hmac=68384a1740c6083c197199047c9ed4133e75176588bd8896f4aa62be7b766053&w=740"
     }

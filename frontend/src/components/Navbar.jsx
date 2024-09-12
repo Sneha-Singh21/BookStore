@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Login from "./Login";
 
 const Navbar = () => {
   // for sticky navbar
@@ -86,7 +87,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content dark:bg-slate-900 dark:text-white bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 {navItems}
               </ul>
@@ -154,9 +155,15 @@ const Navbar = () => {
             </div>
 
             <div>
-              <a className="bg-black text-white px-3 py-1 cursor-pointer rounded-md hover:bg-slate-800 duration-300">
+              <a
+                className="bg-black text-white px-3 py-1 font-medium cursor-pointer rounded-md hover:bg-slate-800 duration-300"
+                onClick={() =>
+                  document.getElementById("my_modal_3").showModal()
+                }
+              >
                 Login
               </a>
+              <Login />
             </div>
           </div>
         </div>

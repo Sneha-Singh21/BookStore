@@ -7,12 +7,12 @@ const Course = () => {
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
-        <div className="mt-32 dark:bg-slate-900 items-center justify-center text-center ">
+        <div className="mt-32 items-center justify-center text-center ">
           <h1 className="text-2xl font-medium md:text-3xl">
             We're delighted to have you{" "}
             <span className="text-pink-500 font-semibold">Here! :)</span>
           </h1>
-          <p className="mt-10 ">
+          <p className="mt-10">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
             illo. Alias porro odio aut nam! Magni doloribus rem necessitatibus
             iusto dolorum inventore delectus quibusdam architecto quae
