@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login.jsx";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Signup = () => {
   const {
@@ -10,7 +11,29 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+
+    await axios
+      .post("http://localhost:4001/user/signup", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          alert("Signup Successful..");
+        }
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          alert("Error : " + err.response.data.message);
+        }
+      });
+  };
+
   return (
     <>
       <div className="h-screen dark:text-black flex md:ml-0 ml-8 items-center justify-center">
@@ -34,10 +57,14 @@ const Signup = () => {
                   type="text"
                   placeholder="Enter your full name"
                   className="outline-none font-normal w-80 px-3 py-1 border rounded-md"
-                  {...register("name", { required: true })}
+                  {...register("fullname", { required: true })}
                 />
-                <br/>
-                {errors.name && <span className="text-sm text-red-500">*This field is required*</span>}
+                <br />
+                {errors.fullname && (
+                  <span className="text-sm text-red-500">
+                    *This field is required*
+                  </span>
+                )}
               </div>
               {/* email */}
               <div className="mt-4 space-y-2">
@@ -49,8 +76,12 @@ const Signup = () => {
                   className="outline-none font-normal w-80 px-3 py-1 border rounded-md"
                   {...register("email", { required: true })}
                 />
-                <br/>
-                {errors.email && <span className="text-sm text-red-500">*This field is required*</span>}
+                <br />
+                {errors.email && (
+                  <span className="text-sm text-red-500">
+                    *This field is required*
+                  </span>
+                )}
               </div>
               {/* Password */}
               <div className="mt-5 space-y-2">
@@ -62,8 +93,12 @@ const Signup = () => {
                   className="outline-none font-normal w-80 py-1 px-3 border rounded-md"
                   {...register("password", { required: true })}
                 />
-                <br/>
-                {errors.password && <span className="text-sm text-red-500">*This field is required*</span>}
+                <br />
+                {errors.password && (
+                  <span className="text-sm text-red-500">
+                    *This field is required*
+                  </span>
+                )}
               </div>
               {/* button */}
               <div className="flex justify-around mt-6">
