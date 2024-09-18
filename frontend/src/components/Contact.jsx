@@ -36,8 +36,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="h-screen dark:text-black ml-24 mt-10 flex items-center justify-center">
-        <div className="w-[550px]">
+      <div className="h-screen dark:text-black md:ml-24 ml-6 mt-6 flex items-center justify-center">
+        <div className="md:w-[550px] w-[700px]">
           <div className="modal-box">
             <form onSubmit={handleSubmit(onSubmit)}>
               <h3 className="font-bold text-3xl">Contact Us</h3>
@@ -48,7 +48,7 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Enter your full name"
-                  className="outline-none font-normal w-96 px-3 py-1 border rounded-md"
+                  className="outline-none font-normal md:w-96 w-80 px-3 py-1 border rounded-md"
                   {...register("fullname", { required: true })} // Corrected "name" to "fullname"
                 />
                 <br />
@@ -65,7 +65,7 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="Email address"
-                  className="outline-none font-normal w-96 px-3 py-1 border rounded-md"
+                  className="outline-none font-normal md:w-96 w-80 px-3 py-1 border rounded-md"
                   {...register("email", { required: true })}
                 />
                 <br />
@@ -81,7 +81,7 @@ const Contact = () => {
                 <br />
                 <textarea
                   placeholder="Type your message.."
-                  className="outline-none font-normal w-96 h-32 py-1 px-3 border rounded-md"
+                  className="outline-none font-normal md:w-96 w-80 h-32 py-1 px-3 border rounded-md"
                   {...register("message", { required: true })}
                 />
                 <br />
