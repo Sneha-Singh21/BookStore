@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Login from "./Login";
+import Login from "./Login.jsx";
+import { useAuth } from "../context/AuthProvider.jsx";
+import Logout from "./Logout.jsx";
 
 const Navbar = () => {
+  // for course component authentication
+  const [authUser, setAuthUser] = useAuth();
+  console.log(authUser);
+
   // for sticky navbar
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
@@ -154,17 +160,21 @@ const Navbar = () => {
               </label>
             </div>
 
-            <div>
-              <a
-                className="bg-black text-white px-3 py-1 font-medium cursor-pointer rounded-md hover:bg-slate-800 duration-300"
-                onClick={() =>
-                  document.getElementById("my_modal_3").showModal()
-                }
-              >
-                Login
-              </a>
-              <Login />
-            </div>
+            {authUser ? (
+              <Logout />
+            ) : (
+              <div>
+                <a
+                  className="bg-black text-white px-3 py-1 font-medium cursor-pointer rounded-md hover:bg-slate-800 duration-300"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
+                  Login
+                </a>
+                <Login />
+              </div>
+            )}
           </div>
         </div>
       </div>
